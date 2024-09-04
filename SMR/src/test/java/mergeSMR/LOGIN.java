@@ -21,7 +21,7 @@ public class LOGIN {
     public static WebDriver driver;
     public WebDriverWait wait;
 
-    @SuppressWarnings("deprecation")
+   @SuppressWarnings("deprecation")
     @BeforeClass
     public void setup() {
 
@@ -51,17 +51,31 @@ public class LOGIN {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement password = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[id=\"mat-input-1\"]")));
         password.sendKeys("MarutiCNM#@123");
-        Thread.sleep(2000);
+               
+          Thread.sleep(3000);
+	    	    
+        WebElement login_Button = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[type=\"submit\"]")));
+        login_Button.click();
+      
     }
 
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     @Test(priority = 3)
-    public void Login_Button() throws InterruptedException {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement password = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[type=\"submit\"]")));
-        password.click();
-        Thread.sleep(20000);
+    public void Captcha() throws InterruptedException {
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        
+      //.................Enter The Captcha ..................................................................
+        WebElement Image = driver.findElement(By.xpath("(//*[@type=\"text\"])[1]"));
+		
+		String S1 = Image.getAttribute("value");
+		System.out.println("captcha ::"+S1);
+					
+	    Thread.sleep(3000);
+	
+        WebElement captcha_field = driver.findElement(By.cssSelector("[placeholder=\"Enter the captcha..\"]"));
+	    captcha_field.sendKeys(S1);
+      //......................................................................	   	    
     }
 
     // wait for 15 Second  and put the captcha code
@@ -73,9 +87,7 @@ public class LOGIN {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement Submit = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[text()=\"Submit\"]")));
         Submit.click();
-        Thread.sleep(3000);
-
-
+        Thread.sleep(10000);
     }
 
-}
+    }
