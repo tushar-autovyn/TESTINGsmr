@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SMR">
+  <test  name="Test">
+    <classes>
+         <class name="mergeSMR.SMR_Due_Date_Wise"/>
+            <class name="mergeSMR.SMR_Bot_status"/>
+            <class name="mergeSMR.HyperLocal_Status_Report_SMR"/>
+            <class name="mergeSMR.BookingConversion_Report_SMR"/>
+            <class name="mergeSMR.Last_Attempt_Report_SMR"/>
+            <class name="mergeSMR.EW_CCP_BOTLeadConversion_Report"/>
+            <class name="mergeSMR.Smart_Eye_lead_performace"/>
+            <class name="mergeSMR.Cross_sell_Intrest_cost"/>
+            <class name="mergeSMR.CrossSellConversion_Report_SMR"/>
+            <class name="mergeSMR.Dealer_subscription"/>
+            <class name="mergeSMR.DueVsDone_Report_SMR"/>
+            <class name="mergeSMR.MarketingCampaign_Report_SMR"/>
+            <class name="mergeSMR.Service_Due_Analysis_Report"/>
+            <class name="mergeSMR.SmartEyeOverAllPerformance"/>
+            <class name="mergeSMR.SMRE_Performance_Report_SMR"/>
+            <class name="mergeSMR.UserList_SMR_Report"/>
+            <class name="mergeSMR.Website_Lead_Report"/>
+             <class name="mergeSMR.DataAvailability_Report_SMR"/>
+              <class name="mergeSMR.AutoDialer_SMR_Report"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
